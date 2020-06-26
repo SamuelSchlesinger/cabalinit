@@ -1,0 +1,25 @@
+#!/bin/bash
+
+mkdir $1
+cd $1
+
+cabal init\
+  --non-interactive\
+  --quiet\
+  --no-comments\
+  --minimal\
+  --package-name=$1\
+  --version="0.1.0.0"\
+  --license="AllRightsReserved"\
+  --author="Samuel Schlesinger"\
+  --email="sgschlesinger@gmail.com"\
+  --homepage="https://github.com/SamuelSchlesinger/$1"\
+  --synopsis="A short description of the project"\
+  --extra-source-file=CHANGELOG.md\
+  --extra-source-file=README.md\
+  --libandexe\
+  --source-dir=src\
+  --application-dir=app\
+  --tests\
+  --test-dir=test\
+  --language=Haskell2010
